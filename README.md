@@ -15,25 +15,15 @@ Then clone this repository into a Researcher Workbench workspace (R kernel) and 
 
 ## Notebooks (in the order the paper presents them)
 
-| Notebook | Paper section | Main output |
-|---|---|---|
-| `01_cohort_smokers.ipynb` | Methods: Study Population (Tables S1–S2) | `smokers_cohort.csv` |
-| `02_treatment.ipynb` | Methods: Cessation Pharmacotherapy Receipt (Table S3) | `cohort_treatment.csv` |
-| `03_covariates_outcome.ipynb` | Methods: Polygenic Score, Covariates, SDoH, Self-reported Smoking Behaviors | `person_covariates.csv`, `DF_smokerV2.csv`, `DF_smokerV3.csv` |
-| `04_descriptives.ipynb` | Results: Sample characteristics (Table 1) | — |
-| `05_aim1_pgs_cessation.ipynb` | Aim 1: PGS → cessation (Figure 1; Tables S11–S14) | `aim1_pgs_cessation_results.csv` |
-| `06_aim2_moderation.ipynb` | Aim 2: PGS × treatment moderation, psychiatric adjustment, IPW (Figure 2; Tables S16–S21) | `interaction_estimates.csv`, `psych_model_tables.xlsx`, `ipw_*.csv/xlsx` |
-| `07_aim3_varenicline_mediation.ipynb` | Aim 3: varenicline recipients, SVE/LVE, mediation by CPD (Figure 3; Table S22) | `varenicline_effectiveness_results.xlsx`, `aim3_mediation_*.csv` |
-| `supplement_treatment_receipt.ipynb` | Supplementary Results: do PGS predict who receives treatment? | `supp_treatment_receipt_results.csv` |
-
-`R/helpers.R` contains the shared functions: workspace-bucket I/O, factor coding, descriptive tables and model extraction.
-Every notebook sources it, so run the notebooks from the repository root.
-
-Intermediate files are written to and read from `$WORKSPACE_BUCKET/data/`, so no workspace-specific paths are hard-coded.
-
-## Inputs created outside these notebooks
-
-These files must already be in `$WORKSPACE_BUCKET/data/` before running notebook 03:
+| Notebook | Paper section |
+|---|---|
+| `01_cohort_smokers.ipynb` | Methods: Study Population (Tables S1–S2) | 
+| `02_treatment.ipynb` | Methods: Cessation Pharmacotherapy Receipt (Table S3) | 
+| `03_covariates_outcome.ipynb` | Methods: Polygenic Score, Covariates, SDoH, Self-reported Smoking Behaviors | 
+| `04_aim1_pgs_cessation.ipynb` | Aim 1: PGS → cessation (Figure 1; Tables S11–S14) |
+| `05_aim2_moderation.ipynb` | Aim 2: PGS × treatment moderation, psychiatric adjustment, IPW (Figure 2; Tables S16–S21) | 
+| `06_aim3_varenicline_mediation.ipynb` | Aim 3: varenicline recipients, SVE/LVE, mediation by CPD (Figure 3; Table S22) | 
+| `supplement_treatment_receipt.ipynb` | Supplementary Results: do PGS predict who receives treatment? |
 
 | File | How it was made |
 |---|---|
@@ -55,6 +45,3 @@ R 4.5.0 on the All of Us Researcher Workbench. Key packages: `tidyverse`, `bigrq
 - Cells marked `NOTE (cleanup)` show where the analysis code was changed during cleanup (bug fixes, explicit joins)
   or where a choice in the code should be checked against the manuscript.
 
-## Contact
-
-Zhen Luo, Department of Psychiatry, Washington University School of Medicine. <!-- TODO: email -->
